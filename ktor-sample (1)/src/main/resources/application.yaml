@@ -1,0 +1,21 @@
+ktor:
+    deployment:
+        port: 8080
+        host: "0.0.0.0"
+
+    application:
+        modules:
+            - com.example.MainKt.module
+
+    database:
+        url: "jdbc:postgresql://localhost:5432/car_db"
+        driver: "org.postgresql.Driver"
+        user: "postgres"
+        password: "password"
+
+    security:
+        jwt:
+            secret: "your-super-secret-jwt-key-change-in-production"
+            issuer: "car-service"
+            audience: "car-app"
+            realm: "ktor app"
