@@ -159,7 +159,7 @@ fun Route.carRoutes() {
 
                 try {
                     if (CarRepository.delete(id)) {
-                        call.respond(CarResponse(success = true, message = "Машина удалена успешно"))
+                        call.respond(HttpStatusCode.NoContent)
                     } else {
                         call.respond(
                             HttpStatusCode.NotFound,
@@ -175,4 +175,5 @@ fun Route.carRoutes() {
             }
         }
     }
+
 }
