@@ -70,7 +70,7 @@ fun Application.configureRouting() {
                 ?: throw NotFoundException("User with ID $id not found")
 
             users.remove(user)
-            call.respond(HttpStatusCode.OK, mapOf("message" to "User deleted successfully"))
+            call.respond(HttpStatusCode.NoContent)
         }
 
 
